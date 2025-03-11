@@ -25,7 +25,7 @@ public class App {
         panel.setLayout(null);
 
         //username label
-        JLabel userLabel = new JLabel("User");
+        JLabel userLabel = new JLabel("Username");
         userLabel.setBounds(10, 20, 80, 25);
         panel.add(userLabel);
 
