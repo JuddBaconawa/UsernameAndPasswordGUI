@@ -14,6 +14,16 @@ import javax.swing.JTextField;
 //main class - APP
 public class App implements ActionListener{
 
+    //made private (encapsulation) to limit access within the main + made static so that it
+    // can be access within the main method.
+    private static JLabel userLabel;
+    private static JTextField userText;
+    private static JLabel passwordLabel;
+    private static JPasswordField passwordText;
+    private static JButton login;
+    private static JLabel success;
+
+
     //main method - everything is excecuted 
     public static void main(String[] args) throws Exception {
 
@@ -28,31 +38,36 @@ public class App implements ActionListener{
         panel.setLayout(null);
 
         //username label
-        JLabel userLabel = new JLabel("Username");
+        userLabel = new JLabel("Username");
         userLabel.setBounds(10, 20, 80, 25);
         panel.add(userLabel);
 
         //username input box
-        JTextField userText = new JTextField(20);
+        userText = new JTextField(20);
         userText.setBounds(100, 20, 165, 25);
         panel.add(userText);
 
         //password label
-        JLabel passwordLabel = new JLabel("Password");
+        passwordLabel = new JLabel("Password");
         passwordLabel.setBounds(10, 50, 80, 25);
         panel.add(passwordLabel);
 
         //pasword input box
-        JPasswordField passwordText = new JPasswordField(20);
+        passwordText = new JPasswordField(20);
         passwordText.setBounds(100, 50, 165,25);
         panel.add(passwordText);
 
         //button created for "login"
-        JButton login = new JButton("Login");
-        login.setBounds(90, 80 , 80, 25);
+        login = new JButton("Login");
+        login.setBounds(10, 110, 300, 25);
         login.addActionListener(new App());
         panel.add(login);
 
+        //for successfull log in - message displays on the GUI
+        success = new JLabel("");
+        success.setBounds(10, 110, 300, 25);
+        panel.add(success);
+         
 
         frame.setVisible(true); //setVisible is set true to allow the GUI to be seen when ran
         
@@ -61,6 +76,12 @@ public class App implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         // Activates the code bellow when the button is clicked - shows on command line
-        System.out.println("Button clicked");
+        String user = userText.getText();
+        String password = passwordText.getText();
+        System.out.println(user + ", " + password);
+
+        if(user.equals("admin") && password.equals("password01")) {
+            success.setText("Login Successful!");
+        }
     }
 }
