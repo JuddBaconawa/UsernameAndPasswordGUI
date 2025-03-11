@@ -2,14 +2,17 @@
 
 
 //imports
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import javax.swing.JFrame;      //imported to enable formating of the GUI
-import javax.swing.JLabel;      //imported for placement of contents within a GUI window
-import javax.swing.JPanel;      //uimported for the placement of label that can have text on the GUI
-import javax.swing.JTextField;  //JTextField for user to input a typed response
+import javax.swing.JFrame;     //login button implemented - m
+import javax.swing.JLabel;      //imported to enable formating of the GUI
+import javax.swing.JPanel;      //imported for placement of contents within a GUI window
+import javax.swing.JPasswordField;      //uimported for the placement of label that can have text on the GUI
+import javax.swing.JTextField;
 
 //main class - APP
-public class App {
+public class App implements ActionListener{
 
     //main method - everything is excecuted 
     public static void main(String[] args) throws Exception {
@@ -40,21 +43,24 @@ public class App {
         panel.add(passwordLabel);
 
         //pasword input box
-        JTextField passwordText = new JTextField(20);
+        JPasswordField passwordText = new JPasswordField(20);
         passwordText.setBounds(100, 50, 165,25);
         panel.add(passwordText);
-
-        // JPasswordField passwordText = new JPasswordField();
-        // passwordText.setBounds(10, 50, 165, 25);
-        // panel.add(passwordText);
 
         //button created for "login"
         JButton login = new JButton("Login");
         login.setBounds(90, 80 , 80, 25);
+        login.addActionListener(new App());
         panel.add(login);
 
 
         frame.setVisible(true); //setVisible is set true to allow the GUI to be seen when ran
         
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // Activates the code bellow when the button is clicked - shows on command line
+        System.out.println("Button clicked");
     }
 }
