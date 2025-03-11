@@ -59,7 +59,7 @@ public class App implements ActionListener{
 
         //button created for "login"
         login = new JButton("Login");
-        login.setBounds(10, 110, 300, 25);
+        login.setBounds(75, 90, 150, 25);
         login.addActionListener(new App());
         panel.add(login);
 
