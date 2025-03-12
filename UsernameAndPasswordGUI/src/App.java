@@ -73,6 +73,7 @@ public class App implements ActionListener{
         
     }
 
+    //activates when the "login" button is clicked by the user
     @Override
     public void actionPerformed(ActionEvent e) {
         // Activates the code bellow when the button is clicked - shows on command line
@@ -80,8 +81,9 @@ public class App implements ActionListener{
         String password = passwordText.getText();
         System.out.println(user + ", " + password);
 
+        //checks on both the username and password
         if(user.equals("admin") && password.equals("password01")) {
-            success.setText("Login Successful!");
+            success.setText("Login Successful!");   //displays succesful loggedin message
         }
     }
 }
