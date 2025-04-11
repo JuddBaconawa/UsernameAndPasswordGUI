@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;	//for//for password field to be used
 import javax.swing.JButton;
 import javax.swing.JFrame;	//Swing form requirement
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -43,9 +44,9 @@ public class LoginForm extends JFrame{
 			usernameLabel.setVisible(true);
 
 			JTextField usernameInput = new JTextField("Enter Username");
-			usernameLabel.setFont(mainFont);
-			usernameLabel.setBounds(200, 150, 75 ,25);
-			usernameLabel.setVisible(true);
+			usernameInput.setFont(mainFont);
+			usernameInput.setBounds(200, 150, 75 ,25);
+			usernameInput.setVisible(true);
 
 			//pasword text label and password inputfield
 			JLabel passwordLabel = new JLabel("Password");
@@ -81,6 +82,20 @@ public class LoginForm extends JFrame{
 				public void actionPerformed(ActionEvent e) {
 					String username = usernameInput.getText();
 					String password = String.valueOf(passwordInput.getPassword());
+
+					User user = getAuthenticatedUser(username, password);
+
+					if (user != null) {
+						MainFrame mainFrame = new MainFrame();
+						mainFrame.initialize(user);
+						dispose();
+					} else {
+						JOptionPane.showMessageDialog(LoginForm.this,
+											"Email or Password Invalid",
+											"Try Again",
+											JOptionPane.ERROR_MESSAGE);
+					}
+					
 				}
 
 			});
