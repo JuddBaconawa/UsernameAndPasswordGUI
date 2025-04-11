@@ -6,21 +6,15 @@
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
-
-
-
-//for swing design changes
-import javax.swing.JFrame;			//for username field to be used
-import javax.swing.JLabel;	//for//for password field to be used
+import java.awt.event.ActionEvent;			//for username field to be used
+import java.awt.event.ActionListener;	//for//for password field to be used
+import javax.swing.JButton;
+import javax.swing.JFrame;	//Swing form requirement
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;	//Swing form requirement
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
-
-//for swing buttons
-import javax.swing.JButton;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 
 
@@ -84,6 +78,20 @@ public class LoginForm extends JFrame{
 				}
 
 			});
+
+			JButton createAccountButton = new JButton("Create Account");
+			createAccountButton.setFont(mainFont);
+			//createAccountButton.setBounds();
+			createAccountButton.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					//dfksajflkdjf
+				}
+				
+			});
+
+;
 
 
 
