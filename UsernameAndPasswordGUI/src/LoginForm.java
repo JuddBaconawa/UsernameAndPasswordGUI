@@ -32,10 +32,11 @@ public class LoginForm extends JFrame{
 			/*********************** Form Panel *************************************/
 
 			//displays to the user if they are logging in or creating an account
-			JLabel loginLabel = new JLabel("Login Form");
+			JLabel loginLabel = new JLabel("Login Form" );
 			loginLabel.setFont(mainFont);
 			loginLabel.setBounds(25, 25, 75, 25);
 
+			//username text label and username inputfield
 			JLabel usernameLabel = new JLabel("Username");
 			usernameLabel.setFont(mainFont);
 			usernameLabel.setBounds(25, 150, 75 ,25);
@@ -46,16 +47,19 @@ public class LoginForm extends JFrame{
 			usernameLabel.setBounds(200, 150, 75 ,25);
 			usernameLabel.setVisible(true);
 
+			//pasword text label and password inputfield
 			JLabel passwordLabel = new JLabel("Password");
 			passwordLabel.setFont(mainFont);
 			usernameLabel.setBounds(25, 200, 75 ,25);
 			usernameLabel.setVisible(true);
 
+		
 			JPasswordField passwordInput = new JPasswordField("Enter password");
 			passwordInput.setFont(mainFont);
 			passwordInput.setBounds(200, 200, 75, 25);
 			passwordInput.setVisible(true);
 
+			//creates the panel, sets the grid layout, and then adds all the fields into the panel
 			JPanel formPanel = new JPanel();
 			formPanel.setLayout(new GridLayout(0, 1, 10, 10));
 			formPanel.add(loginLabel);
@@ -66,11 +70,13 @@ public class LoginForm extends JFrame{
 
 			/************************** Button Panel ********************************/
 
+			//loginbutton
 			JButton loginButton = new JButton("Login");
 			loginButton.setFont(mainFont);
 			//loginButton.setBounds();
 			loginButton.addActionListener(new ActionListener() {
 
+				//action when the user click the login button
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					String username = usernameInput.getText();
@@ -79,11 +85,13 @@ public class LoginForm extends JFrame{
 
 			});
 
+			//create an account button - still changing stuff
 			JButton createAccountButton = new JButton("Create Account");
 			createAccountButton.setFont(mainFont);
 			//createAccountButton.setBounds();
 			createAccountButton.addActionListener(new ActionListener() {
 
+				//action when the user clicks the Create Account button
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					//dfksajflkdjf
@@ -91,7 +99,7 @@ public class LoginForm extends JFrame{
 				
 			});
 
-;
+
 
 
 
