@@ -2,16 +2,26 @@
 
 
 //imports
-//to customize GUI as for toolkit
+//to customize GUI as for toolkit for GUI editting
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+
+
+
+//for swing design changes
 import javax.swing.JFrame;			//for username field to be used
 import javax.swing.JLabel;	//for//for password field to be used
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;	//Swing form requirement
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+//for swing buttons
+import javax.swing.JButton;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 
 
 
@@ -22,7 +32,7 @@ public class LoginForm extends JFrame{
 
 	//required to be declared here to check for credentials
 	JTextField usernameInput;
-	JPasswordField userPasswordInpute;
+	JPasswordField userPasswordInput;
 
 	public void initialize() {
 			/*********************** Form Panel *************************************/
@@ -62,7 +72,20 @@ public class LoginForm extends JFrame{
 
 			/************************** Button Panel ********************************/
 
-			
+			JButton loginButton = new JButton("Login");
+			loginButton.setFont(mainFont);
+			//loginButton.setBounds();
+			loginButton.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					String username = usernameInput.getText();
+					String password = String.valueOf(passwordInput.getPassword());
+				}
+
+			});
+
+
 
 			
 
