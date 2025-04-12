@@ -134,4 +134,14 @@ public class LoginForm extends JFrame{
 			setVisible(true);
 	}
 
+
+
+	private User GetAuthenticatedUser(String usernameInput, String passwordInput) {
+
+		//sets empty or null for the user
+		User user = null;
+
+		final String DB_URL = "";
+	}
+
 }
