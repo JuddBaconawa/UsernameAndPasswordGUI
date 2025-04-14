@@ -8,6 +8,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;			//for username field to be used
 import java.awt.event.ActionListener;	//for//for password field to be used
+import java.sql.DriverManager;
 import javax.swing.JButton;
 import javax.swing.JFrame;	//Swing form requirement
 import javax.swing.JLabel;
@@ -100,7 +101,7 @@ public class LoginForm extends JFrame{
 
 			});
 
-			//create an account button - still changing stuff
+			//"Create Account" button - still changing stuff
 			JButton createAccountButton = new JButton("Create Account");
 			createAccountButton.setFont(mainFont);
 			//createAccountButton.setBounds();
@@ -142,6 +143,14 @@ public class LoginForm extends JFrame{
 		User user = null;
 
 		final String DB_URL = "";
+		final String USERNAME = "root";
+		final String PASSWORD = "#MCMXCii1301!";
+
+		try { 
+			Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
+			
+		}
+
 	}
 
 }
