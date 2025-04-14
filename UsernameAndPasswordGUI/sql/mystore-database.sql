@@ -1,5 +1,6 @@
 -- CREATE DATABASE mystore;
 -- USE mystore;
+-- DROP DATABASE mystore;
 
 
 CREATE TABLE IF NOT EXISTS users (
@@ -13,3 +14,6 @@ CREATE TABLE IF NOT EXISTS users (
     
 INSERT INTO users (userid, name, email, phone, address, password)
     VALUES (NULL, 'admin', 'admin@gmail.com', '+1234567890', 'New York, USA', 'password01');
+
+INSERT INTO users (userid, name, email, phone, address, password)
+    VALUES (NULL, 'dulce', 'dulcebaconawa@gmail.com', '+15613171571', 'Florida, USA', 'password01');
