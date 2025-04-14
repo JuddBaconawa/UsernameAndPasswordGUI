@@ -1,14 +1,19 @@
 //packages
 
 
-//imports
-//to customize GUI as for toolkit for GUI editting
+// ******************* Imports ************************
+// To customize GUI as for toolkit for GUI editting
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;			//for username field to be used
 import java.awt.event.ActionListener;	//for//for password field to be used
+
+// Database connection
+import java.sql.Connection;
 import java.sql.DriverManager;
+
+// GUI formating and visual changes 
 import javax.swing.JButton;
 import javax.swing.JFrame;	//Swing form requirement
 import javax.swing.JLabel;
@@ -30,6 +35,7 @@ public class LoginForm extends JFrame{
 	JTextField usernameInput;
 	JPasswordField userPasswordInput;
 
+	//method Initialize displays a window with a login or create account option
 	public void initialize() {
 			/*********************** Form Panel *************************************/
 
