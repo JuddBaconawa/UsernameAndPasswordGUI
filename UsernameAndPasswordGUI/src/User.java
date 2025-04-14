@@ -1,12 +1,9 @@
 public class User {
 
-	public String name;
+	public String userId;
 	public String username;
-	public String password;
-	public String phone;
 	public String email;
+	public String phone;
 	public String Address;
-
-
-	
+	public String password;
 }
