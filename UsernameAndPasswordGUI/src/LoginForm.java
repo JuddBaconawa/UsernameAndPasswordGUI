@@ -145,7 +145,7 @@ public class LoginForm extends JFrame{
 
 
 
-	private User GetAuthenticatedUser(String usernameInput, String passwordInput) {
+	private User getAuthenticatedUser(String usernameInput, String passwordInput) {
 
 		//sets empty or null for the user
 		User user = null;
@@ -166,9 +166,14 @@ public class LoginForm extends JFrame{
 
 			ResultSet resultSet = preparedStatement.executeQuery();
 
-			if (resultSet.next()) {
+			if (resultSet.next()) { 
 					user = new User();
-					user.name = resultSet.getString("na")
+					user.userId = resultSet.getInt()
+					user.username = resultSet.getString("username");
+					user.email = resultSet.getString("email");
+					user.phone = resultSet.getString("phone");
+					user.address = resultSet.getString("address");
+					user.password = resultSet.getString("password");
 			}
 
 		}
