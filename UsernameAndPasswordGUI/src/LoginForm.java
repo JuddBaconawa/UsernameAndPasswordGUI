@@ -3,25 +3,27 @@
 
 // ******************* Imports ************************
 // To customize GUI as for toolkit for GUI editting
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.GridLayout;
+import java.awt.Dimension;							//setting up the size of an object
+import java.awt.Font;										//setting up a customized font 
+import java.awt.GridLayout;							//setting the layout via grid of the GUI
 import java.awt.event.ActionEvent;			//for username field to be used
-import java.awt.event.ActionListener;	//for//for password field to be used
+import java.awt.event.ActionListener;		//for//for password field to be used
 
 // Database connection
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.Connection;							//connection to database
+import java.sql.DriverManager;					//im not sure
+import java.sql.PreparedStatement;			//for database SQL statement
+import java.sql.ResultSet;							//for finding the result from the SQL statement + database
 
 // GUI formating and visual changes 
-import javax.swing.JButton;
-import javax.swing.JFrame;	//Swing form requirement
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.WindowConstants;
+import javax.swing.JButton;							//for buttons within the FORMs window
+import javax.swing.JFrame;							//Swing form requirement
+import javax.swing.JLabel;							//creating labels within the GUI
+import javax.swing.JOptionPane;					//adding a class used to create simple popup dialog boxes
+import javax.swing.JPanel;							//used to organize the components into a group
+import javax.swing.JPasswordField;			//password input
+import javax.swing.JTextField;					//username input
+import javax.swing.WindowConstants;			//
 
 
 
@@ -148,13 +150,27 @@ public class LoginForm extends JFrame{
 		//sets empty or null for the user
 		User user = null;
 
-		final String DB_URL = "";
+		final String DB_URL = "jdbc:mysql://localhost:3306/mystore"; //database address
 		final String USERNAME = "root";
 		final String PASSWORD = "#MCMXCii1301!";
 
-		try { 
-			Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
-			
+		try {
+			//connect to the database 
+			Connection conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+
+			//SQL statement to pull out the list of files from the users table
+			String sql = "SELECT * FROM users WHERE username=? AND password=?";
+			PreparedStatement preparedStatement = conn.prepareStatement(sql);
+			preparedStatement.setString(1, username);
+			preparedStatement.setString(2, password);
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			if (resultSet.next()) {
+					user = new User();
+					user.name = resultSet.getString("na")
+			}
+
 		}
 
 	}
