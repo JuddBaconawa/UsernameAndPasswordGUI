@@ -1,5 +1,6 @@
 public class User {
 
+	//attributes of a User class
 	public String userId;
 	public String username;
 	public String email;
