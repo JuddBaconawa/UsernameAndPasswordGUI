@@ -1,5 +1,5 @@
--- CREATE DATABASE mystore;
--- USE mystore;
+usersCREATE DATABASE mystore;
+USE mystore;
 -- DROP DATABASE mystore;
 
 
