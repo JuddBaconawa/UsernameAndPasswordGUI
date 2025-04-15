@@ -168,7 +168,7 @@ public class LoginForm extends JFrame{
 
 			if (resultSet.next()) { 
 					user = new User();
-					user.userId = resultSet.getInt()
+					user.userId = resultSet.getInt("userId");
 					user.username = resultSet.getString("username");
 					user.email = resultSet.getString("email");
 					user.phone = resultSet.getString("phone");
