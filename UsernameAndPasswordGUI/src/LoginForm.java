@@ -177,6 +177,10 @@ public class LoginForm extends JFrame{
 					user.password = resultSet.getString("password");
 			}
 
+			preparedStatement.close();
+			conn.close();
+
+
 		}
 
 	}
