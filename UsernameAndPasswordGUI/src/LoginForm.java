@@ -110,15 +110,16 @@ public class LoginForm extends JFrame{
 			});
 
 			//"Create Account" button - still changing stuff
-			JButton createAccountButton = new JButton("Create Account");
-			createAccountButton.setFont(mainFont);
+			JButton cancelButton = new JButton("Create Account");
+			cancelButton.setFont(mainFont);
 			//createAccountButton.setBounds();
-			createAccountButton.addActionListener(new ActionListener() {
+			cancelButton.addActionListener(new ActionListener() {
 
 				//action when the user clicks the Create Account button
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					//dfksajflkdjf
+					dispose();
 				}
 				
 			});
@@ -156,7 +157,7 @@ public class LoginForm extends JFrame{
 
 		try {
 			//connect to the database 
-			Connection conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
+			Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
 
 			//SQL statement to pull out the list of files from the users table
 			String sql = "SELECT * FROM users WHERE username=? AND password=?";
