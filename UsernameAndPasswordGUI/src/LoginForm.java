@@ -180,8 +180,12 @@ public class LoginForm extends JFrame{
 			preparedStatement.close();
 			conn.close();
 
-
+		} catch(Exception e) {
+			System.out.println("Database connexion failed!");
 		}
+
+
+		return user;
 
 	}
 
