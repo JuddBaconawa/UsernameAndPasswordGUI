@@ -56,7 +56,7 @@ public class LoginForm extends JFrame{
 			// usernameLabel.setBounds(25, 150, 75 ,25);
 			usernameLabel.setVisible(true);
 
-			usernameInput = new JTextField("Enter Username");
+			usernameInput = new JTextField("");
 			usernameInput.setFont(mainFont);
 			// usernameInput.setBounds(200, 150, 75 ,25);
 			usernameInput.setVisible(true);
@@ -67,7 +67,7 @@ public class LoginForm extends JFrame{
 			// passwordLabel.setBounds(25, 200, 75 ,25);
 			passwordLabel.setVisible(true);
 
-			userPasswordInput = new JPasswordField("Enter password");
+			userPasswordInput = new JPasswordField();
 			userPasswordInput.setFont(mainFont);
 			// passwordInput.setBounds(200, 200, 75, 25);
 			userPasswordInput.setVisible(true);
