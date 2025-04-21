@@ -44,30 +44,29 @@ public class LoginForm extends JFrame{
 			//displays to the user if they are logging in or creating an account
 			JLabel loginLabel = new JLabel("Login Form" );
 			loginLabel.setFont(mainFont);
-			loginLabel.setBounds(25, 25, 75, 25);
+			// loginLabel.setBounds(25, 25, 75, 25);
 
 			//username text label and username inputfield
 			JLabel usernameLabel = new JLabel("Username");
 			usernameLabel.setFont(mainFont);
-			usernameLabel.setBounds(25, 150, 75 ,25);
+			// usernameLabel.setBounds(25, 150, 75 ,25);
 			usernameLabel.setVisible(true);
 
 			usernameInput = new JTextField("Enter Username");
 			usernameInput.setFont(mainFont);
-			usernameInput.setBounds(200, 150, 75 ,25);
+			// usernameInput.setBounds(200, 150, 75 ,25);
 			usernameInput.setVisible(true);
 
 			//pasword text label and password inputfield
 			JLabel passwordLabel = new JLabel("Password");
 			passwordLabel.setFont(mainFont);
-			passwordLabel.setBounds(25, 200, 75 ,25);
+			// passwordLabel.setBounds(25, 200, 75 ,25);
 			passwordLabel.setVisible(true);
 
-		
-			JPasswordField passwordInput = new JPasswordField("Enter password");
-			passwordInput.setFont(mainFont);
-			passwordInput.setBounds(200, 200, 75, 25);
-			passwordInput.setVisible(true);
+			userPasswordInput = new JPasswordField("Enter password");
+			userPasswordInput.setFont(mainFont);
+			// passwordInput.setBounds(200, 200, 75, 25);
+			userPasswordInput.setVisible(true);
 
 			//creates the panel, sets the grid layout, and then adds all the fields into the panel
 			JPanel formPanel = new JPanel();
@@ -76,7 +75,7 @@ public class LoginForm extends JFrame{
 			formPanel.add(usernameLabel);
 			formPanel.add(usernameInput);
 			formPanel.add(passwordLabel);
-			formPanel.add(passwordInput);
+			formPanel.add(userPasswordInput);
 
 			/************************** Button Panel ********************************/
 
