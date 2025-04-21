@@ -9,7 +9,8 @@ public class App {
     //main method where everything is initialized and ran
     public static void main(String[] args) {
         
-        
+        LoginForm loginForm = new LoginForm();
+        loginForm.initialize();
 
     }
 }
