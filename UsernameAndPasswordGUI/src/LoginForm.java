@@ -39,8 +39,11 @@ public class LoginForm extends JFrame{
 
 	//method Initialize displays a window with a login or create account option
 	public void initialize() {
+
+
 			/*********************** Form Panel *************************************/
 
+			/***********************Labels and input Box ****************************/
 			//displays to the user if they are logging in or creating an account
 			JLabel loginLabel = new JLabel("Login Form" );
 			loginLabel.setFont(mainFont);
@@ -68,8 +71,10 @@ public class LoginForm extends JFrame{
 			// passwordInput.setBounds(200, 200, 75, 25);
 			userPasswordInput.setVisible(true);
 
+			//========================== Form Panel (holds labels and inputs) ====================
 			//creates the panel, sets the grid layout, and then adds all the fields into the panel
 			JPanel formPanel = new JPanel();
+			
 			formPanel.setLayout(new GridLayout(0, 1, 10, 10));
 			formPanel.add(loginLabel);
 			formPanel.add(usernameLabel);
@@ -89,7 +94,7 @@ public class LoginForm extends JFrame{
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					String username = usernameInput.getText();
-					String password = String.valueOf(passwordInput.getPassword());
+					String password = String.valueOf(userPasswordInput.getPassword());
 
 					User user = getAuthenticatedUser(username, password);
 
@@ -150,6 +155,8 @@ public class LoginForm extends JFrame{
 
 			//SQL statement to pull out the list of files from the users table
 			String sql = "SELECT * FROM users WHERE username=? AND password=?";
+
+			//use PreparedStatements to prevent SQLinjection attacks
 			PreparedStatement preparedStatement = conn.prepareStatement(sql);
 			preparedStatement.setString(1, username);
 			preparedStatement.setString(2, password);
@@ -170,7 +177,7 @@ public class LoginForm extends JFrame{
 			conn.close();
 
 		} catch(Exception e) {
-			System.out.println("Database connexion failed!");
+			System.out.println("Database connexion failed!" + e.getLocalizedMessage());
 		}
 
 
