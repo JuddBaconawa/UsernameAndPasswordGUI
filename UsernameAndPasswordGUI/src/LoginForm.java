@@ -3,6 +3,7 @@
 
 // ******************* Imports ************************
 // To customize GUI as for toolkit for GUI editting
+import java.awt.BorderLayout;
 import java.awt.Dimension;							//setting up the size of an object
 import java.awt.Font;										//setting up a customized font 
 import java.awt.GridLayout;							//setting the layout via grid of the GUI
@@ -73,9 +74,8 @@ public class LoginForm extends JFrame{
 
 			//========================== Form Panel (holds labels and inputs) ====================
 			//creates the panel, sets the grid layout, and then adds all the fields into the panel
-			JPanel formPanel = new JPanel();
+			JPanel formPanel = new JPanel(new GridLayout(0, 1, 10, 10));
 			
-			formPanel.setLayout(new GridLayout(0, 1, 10, 10));
 			formPanel.add(loginLabel);
 			formPanel.add(usernameLabel);
 			formPanel.add(usernameInput);
@@ -88,6 +88,8 @@ public class LoginForm extends JFrame{
 			JButton loginButton = new JButton("Login");
 			loginButton.setFont(mainFont);
 			//loginButton.setBounds();
+
+			//add logig to the login button
 			loginButton.addActionListener(new ActionListener() {
 
 				//action when the user click the login button
@@ -114,10 +116,10 @@ public class LoginForm extends JFrame{
 			});
 
 			//"Create Account" button - still changing stuff
-			JButton cancelButton = new JButton("Create Account");
-			cancelButton.setFont(mainFont);
+			JButton createAccountButton = new JButton("Create Account");
+			createAccountButton.setFont(mainFont);
 			//createAccountButton.setBounds();
-			cancelButton.addActionListener(new ActionListener() {
+			createAccountButton.addActionListener(new ActionListener() {
 
 				//action when the user clicks the Create Account button
 				@Override
@@ -127,13 +129,22 @@ public class LoginForm extends JFrame{
 				}
 				
 			});
-			/************************** Initialize the Frame ********************************/
+			/******************************button panel (buttons) *****************************/
 
-			setTitle("Login Form");
-			setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+			JPanel buttonPanel = new JPanel(new GridLayout(1, 2, 10, 10));
+			buttonPanel.add(loginButton);
+			buttonPanel.add(createAccountButton);
+
+
+			/******************** Initialize the Frame + final frame settings ***************************/
+
+			setTitle("Login to Clock In");  //window title
+			setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);  //have to keep the app running so change to hide
 			setSize(400, 500);
 			setMinimumSize(new Dimension(350, 450));
-			//setResizable(false);
+			//setResizable(false);  //not sure how i want it yet
+			add(formPanel, BorderLayout.CENTER);
+			add(buttonPanel, BorderLayout.SOUTH);
 			setLocationRelativeTo(null);
 			setVisible(true);
 	}
@@ -161,6 +172,7 @@ public class LoginForm extends JFrame{
 			preparedStatement.setString(1, username);
 			preparedStatement.setString(2, password);
 
+			//execute query 
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			if (resultSet.next()) { 
