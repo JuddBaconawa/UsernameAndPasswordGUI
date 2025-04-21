@@ -52,7 +52,7 @@ public class LoginForm extends JFrame{
 			usernameLabel.setBounds(25, 150, 75 ,25);
 			usernameLabel.setVisible(true);
 
-			JTextField usernameInput = new JTextField("Enter Username");
+			usernameInput = new JTextField("Enter Username");
 			usernameInput.setFont(mainFont);
 			usernameInput.setBounds(200, 150, 75 ,25);
 			usernameInput.setVisible(true);
@@ -60,8 +60,8 @@ public class LoginForm extends JFrame{
 			//pasword text label and password inputfield
 			JLabel passwordLabel = new JLabel("Password");
 			passwordLabel.setFont(mainFont);
-			usernameLabel.setBounds(25, 200, 75 ,25);
-			usernameLabel.setVisible(true);
+			passwordLabel.setBounds(25, 200, 75 ,25);
+			passwordLabel.setVisible(true);
 
 		
 			JPasswordField passwordInput = new JPasswordField("Enter password");
@@ -118,21 +118,11 @@ public class LoginForm extends JFrame{
 				//action when the user clicks the Create Account button
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					//dfksajflkdjf
+					//dispose close releases all
 					dispose();
 				}
 				
 			});
-
-
-
-
-
-			
-
-
-
-
 			/************************** Initialize the Frame ********************************/
 
 			setTitle("Login Form");
