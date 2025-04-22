@@ -28,3 +28,11 @@ CREATE TABLE salaries (
     FOREIGN KEY (userId) REFERENCES users(userId) on DELETE CASCADE
 );
 
+CREATE TABLE timesheets (
+    timesheetId INT AUTO_INCREMENT PRIMARY KEY,
+    userId INT NOT NULL,
+    clockIn DATETIME NOT NULL,
+    clockOut DATETIME,
+    notes TEXT,
+    FOREIGN KEY (userId) REFERENCES user(userId) ON DELETE CASCADE
+);
