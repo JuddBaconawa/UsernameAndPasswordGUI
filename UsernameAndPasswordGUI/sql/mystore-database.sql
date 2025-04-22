@@ -17,3 +17,14 @@ INSERT INTO users (userid, username, email, phone, address, password)
 
 INSERT INTO users (userid, username, email, phone, address, password)
     VALUES (3171245, 'dulce', 'dulcebaconawa@gmail.com', '+15613171571', 'Florida, USA', 'password01');
+
+
+CREATE TABLE salaries (
+    salaryId INT AUTO_INCREMENT PRIMARY KEY,
+    userId INT NOT NULL,
+    payType ENUM('hourly', 'salary') NOT NULL DEFAULT 'hourly',
+    payRate DECIMAL(10,2) NOT NULL,
+    effectiveDate DATE NOT NULL,
+    FOREIGN KEY (userId) REFERENCES users(userId) on DELETE CASCADE
+);
+
