@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS users;
 
 
 
-CREATE TABLE IF NOT EXISTS users (
+CREATE TABLE users (
 	userid INT(7) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(200) NOT NULL,
     email VARCHAR(200) NOT NULL UNIQUE,
@@ -29,14 +29,7 @@ CREATE TABLE salaries (
 );
 
 
-CREATE TABLE timesheets (
-    timesheetId INT AUTO_INCREMENT PRIMARY KEY,
-    userId INT NOT NULL,
-    clockIn DATETIME NOT NULL,
-    clockOut DATETIME,
-    notes TEXT,
-    FOREIGN KEY (userId) REFERENCES user(userId) ON DELETE CASCADE
-);
+
 
 
 INSERT INTO users (userid, username, email, phone, address, password)
