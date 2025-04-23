@@ -24,6 +24,7 @@ import javax.swing.JOptionPane;					//adding a class used to create simple popup
 import javax.swing.JPanel;							//used to organize the components into a group
 import javax.swing.JPasswordField;			//password input
 import javax.swing.JTextField;					//username input
+import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;			//
 
 
@@ -46,7 +47,7 @@ public class LoginForm extends JFrame{
 
 			/***********************Labels and input Box ****************************/
 			//displays to the user if they are logging in or creating an account
-			JLabel loginLabel = new JLabel("Login Form" );
+			JLabel loginLabel = new JLabel("Login Form", SwingConstants.CENTER);
 			loginLabel.setFont(mainFont);
 			// loginLabel.setBounds(25, 25, 75, 25);
 
@@ -131,7 +132,7 @@ public class LoginForm extends JFrame{
 			});
 			/******************************button panel (buttons) *****************************/
 
-			JPanel buttonPanel = new JPanel(new GridLayout(1, 2, 10, 10));
+			JPanel buttonPanel = new JPanel(new GridLayout(1, 2, 10, 50));
 			buttonPanel.add(loginButton);
 			buttonPanel.add(createAccountButton);
 
@@ -143,7 +144,7 @@ public class LoginForm extends JFrame{
 			setSize(400, 500);
 			setMinimumSize(new Dimension(350, 450));
 			//setResizable(false);  //not sure how i want it yet
-			add(formPanel, BorderLayout.CENTER);
+			add(formPanel, BorderLayout.NORTH);
 			add(buttonPanel, BorderLayout.SOUTH);
 			setLocationRelativeTo(null);
 			setVisible(true);
