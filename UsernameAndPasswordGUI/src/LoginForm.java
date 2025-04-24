@@ -15,6 +15,7 @@ import java.sql.Connection;							//connection to database
 import java.sql.DriverManager;					//im not sure
 import java.sql.PreparedStatement;			//for database SQL statement
 import java.sql.ResultSet;							//for finding the result from the SQL statement + database
+import javax.swing.BorderFactory;
 
 // GUI formating and visual changes 
 import javax.swing.JButton;							//for buttons within the FORMs window
@@ -47,7 +48,7 @@ public class LoginForm extends JFrame{
 
 			/***********************Labels and input Box ****************************/
 			//displays to the user if they are logging in or creating an account
-			JLabel loginLabel = new JLabel("Login Form", SwingConstants.CENTER);
+			JLabel loginLabel = new JLabel("Login to Clock In", SwingConstants.CENTER);
 			loginLabel.setFont(mainFont);
 			// loginLabel.setBounds(25, 25, 75, 25);
 
@@ -76,7 +77,8 @@ public class LoginForm extends JFrame{
 			//========================== Form Panel (holds labels and inputs) ====================
 			//creates the panel, sets the grid layout, and then adds all the fields into the panel
 			JPanel formPanel = new JPanel(new GridLayout(0, 1, 10, 10));
-			
+			formPanel.setBorder(BorderFactory.createEmptyBorder(30, 50, 30, 50));
+
 			formPanel.add(loginLabel);
 			formPanel.add(usernameLabel);
 			formPanel.add(usernameInput);
@@ -138,7 +140,7 @@ public class LoginForm extends JFrame{
 
 			/******************** Initialize the Frame + final frame settings ***************************/
 
-			add(formPanel, BorderLayout.CENTER);
+			add(formPanel, BorderLayout.NORTH);
 			add(buttonPanel, BorderLayout.SOUTH);
 
 
