@@ -90,6 +90,7 @@ public class LoginForm extends JFrame{
 			//loginbutton
 			JButton loginButton = new JButton("Login");
 			loginButton.setFont(mainFont);
+
 			//loginButton.setBounds();
 
 			//add logig to the login button
@@ -133,7 +134,9 @@ public class LoginForm extends JFrame{
 			});
 			/******************************button panel (buttons) *****************************/
 
-			JPanel buttonPanel = new JPanel(new GridLayout(1, 2, 10, 50));
+			JPanel buttonPanel = new JPanel();
+			buttonPanel.setLayout(new GridLayout(1, 2, 10, 0));
+			buttonPanel.setBorder(BorderFactory.createEmptyBorder(30, 50, 30, 50));
 			buttonPanel.add(loginButton);
 			buttonPanel.add(cancelButton);
 
