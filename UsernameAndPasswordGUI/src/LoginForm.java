@@ -117,10 +117,9 @@ public class LoginForm extends JFrame{
 			});
 
 			//"Create Account" button - still changing stuff
-			JButton createAccountButton = new JButton("Create Account");
-			createAccountButton.setFont(mainFont);
-			//createAccountButton.setBounds();
-			createAccountButton.addActionListener(new ActionListener() {
+			JButton cancelButton = new JButton("Exit");
+			cancelButton.setFont(mainFont);
+			cancelButton.addActionListener(new ActionListener() {
 
 				//action when the user clicks the Create Account button
 				@Override
@@ -134,18 +133,20 @@ public class LoginForm extends JFrame{
 
 			JPanel buttonPanel = new JPanel(new GridLayout(1, 2, 10, 50));
 			buttonPanel.add(loginButton);
-			buttonPanel.add(createAccountButton);
+			buttonPanel.add(cancelButton);
 
 
 			/******************** Initialize the Frame + final frame settings ***************************/
+
+			add(formPanel, BorderLayout.CENTER);
+			add(buttonPanel, BorderLayout.SOUTH);
+
 
 			setTitle("Login to Clock In");  //window title
 			setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);  //have to keep the app running so change to hide
 			setSize(400, 500);
 			setMinimumSize(new Dimension(350, 450));
 			//setResizable(false);  //not sure how i want it yet
-			add(formPanel, BorderLayout.NORTH);
-			add(buttonPanel, BorderLayout.SOUTH);
 			setLocationRelativeTo(null);
 			setVisible(true);
 	}
