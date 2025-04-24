@@ -13,11 +13,12 @@ public class MainFrame extends JFrame {
 		infoPanel.setLayout(new GridLayout(0, 2, 5, 5));
 
 
-		setTitle("Dashboard");
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setSize(1100, 650);
-		setLocationRelativeTo(null);
-		setVisible(true);
+		
+		setTitle("Dashboard");										// Set tile of the mainframe
+		setDefaultCloseOperation(EXIT_ON_CLOSE);				// set default close operation
+		setSize(1100, 650);								// set size
+		setLocationRelativeTo(null);									// set relative size
+		setVisible(true);															// set visible to display the GUI window
 
 
 	}
