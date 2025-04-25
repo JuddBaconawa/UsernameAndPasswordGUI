@@ -1,6 +1,7 @@
 // PACKAGES
 
 // IMPORTS
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -21,7 +22,7 @@ public class MainFrame extends JFrame {
 		infoPanel.add(new JLabel("Address"));
 		infoPanel.add(new JLabel(user.address));
 
-
+		add(infoPanel, BorderLayout.NORTH);
 
 		
 		setTitle("Dashboard");										// Set tile of the mainframe
