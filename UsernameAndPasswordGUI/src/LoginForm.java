@@ -86,12 +86,10 @@ public class LoginForm extends JFrame{
 			formPanel.add(userPasswordInput);
 
 			/************************** Button Panel ********************************/
-
 			//loginbutton
 			JButton loginButton = new JButton("Login");
 			//loginButton.setFont(mainFont);
-
-			//loginButton.setBounds();
+			//loginButton.setBounds();											// Sets up the placement of the button manually
 
 			//add logig to the login button
 			loginButton.addActionListener(new ActionListener() {
