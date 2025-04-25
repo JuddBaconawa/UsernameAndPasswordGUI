@@ -5,7 +5,7 @@
 // To customize GUI as for toolkit for GUI editting
 import java.awt.BorderLayout;
 import java.awt.Dimension;							//setting up the size of an object
-import java.awt.Font;										//setting up a customized font 
+import java.awt.Font;										//setting up a customized font - not used at the momemt
 import java.awt.GridLayout;							//setting the layout via grid of the GUI
 import java.awt.event.ActionEvent;			//for username field to be used
 import java.awt.event.ActionListener;		//for//for password field to be used
