@@ -34,7 +34,7 @@ import javax.swing.WindowConstants;			// defines constants that control the wind
 //LoginForm main class
 public class LoginForm extends JFrame{
 	//global variables are declared here
-	final private Font mainFont = new Font("Segeo print", Font.BOLD, 18);
+	//final private Font mainFont = new Font("Segeo print", Font.BOLD, 18);
 
 	//required to be declared here to check for credentials
 	JTextField usernameInput;
@@ -49,7 +49,7 @@ public class LoginForm extends JFrame{
 			/***********************Labels and input Box ****************************/
 			//displays to the user if they are logging in or creating an account
 			JLabel loginLabel = new JLabel("Login to Clock In", SwingConstants.CENTER);
-			loginLabel.setFont(mainFont);
+			//loginLabel.setFont(mainFont);
 			// loginLabel.setBounds(25, 25, 75, 25);
 
 			//username text label and username inputfield
@@ -58,8 +58,8 @@ public class LoginForm extends JFrame{
 			// usernameLabel.setBounds(25, 150, 75 ,25);
 			usernameLabel.setVisible(true);
 
-			usernameInput = new JTextField("");
-			usernameInput.setFont(mainFont);
+			usernameInput = new JTextField();
+			//usernameInput.setFont(mainFont);
 			// usernameInput.setBounds(200, 150, 75 ,25);
 			usernameInput.setVisible(true);
 
@@ -70,7 +70,7 @@ public class LoginForm extends JFrame{
 			passwordLabel.setVisible(true);
 
 			userPasswordInput = new JPasswordField();
-			userPasswordInput.setFont(mainFont);
+			//userPasswordInput.setFont(mainFont);
 			// passwordInput.setBounds(200, 200, 75, 25);
 			userPasswordInput.setVisible(true);
 
@@ -89,7 +89,7 @@ public class LoginForm extends JFrame{
 
 			//loginbutton
 			JButton loginButton = new JButton("Login");
-			loginButton.setFont(mainFont);
+			//loginButton.setFont(mainFont);
 
 			//loginButton.setBounds();
 
@@ -123,7 +123,7 @@ public class LoginForm extends JFrame{
 
 			//"Create Account" button - still changing stuff
 			JButton cancelButton = new JButton("Exit");
-			cancelButton.setFont(mainFont);
+			//cancelButton.setFont(mainFont);
 			cancelButton.addActionListener(new ActionListener() {
 
 				//action when the user clicks the Create Account button
