@@ -176,8 +176,8 @@ public class LoginForm extends JFrame{
 
 			//use PreparedStatements to prevent SQLinjection attacks
 			PreparedStatement preparedStatement = conn.prepareStatement(sql);
-			preparedStatement.setString(1, username);
-			preparedStatement.setString(2, password);
+			preparedStatement.setString(1, usernameInput);
+			preparedStatement.setString(2, passwordInput);
 
 			//execute query 
 			ResultSet resultSet = preparedStatement.executeQuery();
