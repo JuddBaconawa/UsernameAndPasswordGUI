@@ -3,6 +3,7 @@
 // IMPORTS
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,6 +14,7 @@ public class MainFrame extends JFrame {
 		/********************** Info Panel ************************/
 		JPanel infoPanel = new JPanel();
 		infoPanel.setLayout(new GridLayout(0, 2, 5, 5));
+		infoPanel.setBorder(BorderFactory.createEmptyBorder(30, 50, 30, 50));
 		infoPanel.add(new JLabel("Name"));
 		infoPanel.add(new JLabel(user.username));
 		infoPanel.add(new JLabel("Email"));
