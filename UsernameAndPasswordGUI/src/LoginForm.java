@@ -25,8 +25,8 @@ import javax.swing.JOptionPane;					//adding a class used to create simple popup
 import javax.swing.JPanel;							//used to organize the components into a group
 import javax.swing.JPasswordField;			//password input
 import javax.swing.JTextField;					//username input
-import javax.swing.SwingConstants;
-import javax.swing.WindowConstants;			//
+import javax.swing.SwingConstants;			// provide positioning and orientations
+import javax.swing.WindowConstants;			// defines constants that control the window-closing operations in swing applications
 
 
 
@@ -105,10 +105,12 @@ public class LoginForm extends JFrame{
 					User user = getAuthenticatedUser(username, password);
 
 					if (user != null) {
+						// if null
 						MainFrame mainFrame = new MainFrame();
 						mainFrame.initialize(user);
 						dispose();
 					} else {
+						// other error results
 						JOptionPane.showMessageDialog(LoginForm.this,
 											"Email or Password Invalid",
 											"Try Again",
@@ -132,28 +134,29 @@ public class LoginForm extends JFrame{
 				}
 				
 			});
-			/******************************button panel (buttons) *****************************/
 
+			/****************************** Button Panel (buttons) *****************************/
+			// For the 
 			JPanel buttonPanel = new JPanel();
 			buttonPanel.setLayout(new GridLayout(1, 2, 10, 0));
 			buttonPanel.setBorder(BorderFactory.createEmptyBorder(30, 50, 30, 50));
-			buttonPanel.add(loginButton);
-			buttonPanel.add(cancelButton);
+			buttonPanel.add(loginButton);							// To add the login Button
+			buttonPanel.add(cancelButton);						// To add the cancel button
 
 
 			/******************** Initialize the Frame + final frame settings ***************************/
 
-			add(formPanel, BorderLayout.NORTH);
-			add(buttonPanel, BorderLayout.SOUTH);
+			add(formPanel, BorderLayout.NORTH);							// Layout for the form panel
+			add(buttonPanel, BorderLayout.SOUTH);						// layout format for the buttons
 
 
 			setTitle("Login to Clock In");  //window title
-			setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);  //have to keep the app running so change to hide
-			setSize(400, 500);
+			setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);  // have to keep the app running so change to hide
+			setSize(400, 500);														// Set first size
 			setMinimumSize(new Dimension(350, 450));
-			//setResizable(false);  //not sure how i want it yet
+			//setResizable(false);  																	// not sure how i want it yet
 			setLocationRelativeTo(null);
-			setVisible(true);
+			setVisible(true);																				// makes the GUI visible
 	}
 
 
@@ -163,9 +166,9 @@ public class LoginForm extends JFrame{
 		//sets empty or null for the user
 		User user = null;
 
-		final String DB_URL = "jdbc:mysql://localhost:3306/mystore"; //database address
-		final String USERNAME = "root";
-		final String PASSWORD = "#MCMXCii1301!";
+		final String DB_URL = "jdbc:mysql://localhost:3306/mystore"; // database address
+		final String USERNAME = "root";															 // Username for database user
+		final String PASSWORD = "#MCMXCii1301!";										 // Password for root
 
 		try {
 			//connect to the database 
