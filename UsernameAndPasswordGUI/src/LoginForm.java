@@ -157,7 +157,7 @@ public class LoginForm extends JFrame{
 			setVisible(true);																				// makes the GUI visible
 	}
 
-
+	
 
 	private User getAuthenticatedUser(String usernameInput, String passwordInput) {
 
@@ -169,6 +169,11 @@ public class LoginForm extends JFrame{
 		final String PASSWORD = "#MCMXCii1301!";										 // Password for root
 
 		try {
+
+			// Load MySQL JDBC driver
+			Class.forName("com.mysql.cj.jdbc.Driver");
+
+
 			//connect to the database 
 			Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
 
