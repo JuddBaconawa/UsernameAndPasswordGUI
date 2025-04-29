@@ -19,14 +19,14 @@ CREATE TABLE users (
 
 
 
-CREATE TABLE salaries (
-    salaryId INT AUTO_INCREMENT PRIMARY KEY,
-    userId INT NOT NULL,
-    payType ENUM('hourly', 'salary') NOT NULL DEFAULT 'hourly',
-    payRate DECIMAL(10,2) NOT NULL,
-    effectiveDate DATE NOT NULL,
-    FOREIGN KEY (userId) REFERENCES users(userId) on DELETE CASCADE
-);
+-- CREATE TABLE salaries (
+--     salaryId INT AUTO_INCREMENT PRIMARY KEY,
+--     userId INT NOT NULL,
+--     payType ENUM('hourly', 'salary') NOT NULL DEFAULT 'hourly',
+--     payRate DECIMAL(10,2) NOT NULL,
+--     effectiveDate DATE NOT NULL,
+--     FOREIGN KEY (userId) REFERENCES users(userId) on DELETE CASCADE
+-- );
 
 
 
