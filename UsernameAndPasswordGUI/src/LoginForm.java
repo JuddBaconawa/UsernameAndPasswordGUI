@@ -164,7 +164,7 @@ public class LoginForm extends JFrame{
 		//sets empty or null for the user
 		User user = null;
 
-		final String DB_URL = "jdbc:mysql://localhost:3306/mystore"; // database address
+		final String DB_URL = "jdbc:mysql://localhost:3306/localhost"; // database address
 		final String USERNAME = "root";															 // Username for database user
 		final String PASSWORD = "#MCMXCii1301!";										 // Password for root
 
@@ -210,10 +210,7 @@ public class LoginForm extends JFrame{
 
 	}
 
-	// public static void main(String[] args) {
-	// 		LoginForm loginForm = new LoginForm();
-	// 		loginForm.initialize();
-	// }
+
 
 
 }
