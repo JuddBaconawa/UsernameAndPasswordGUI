@@ -32,8 +32,14 @@ import javax.swing.WindowConstants;
 public class LoginForm extends JFrame {
 
     // Set Global for credential check
-    JTextField usernameInput;
-    JPasswordField passwordInput;
+    private final JTextField usernameInput;
+    private final JPasswordField passwordInput;
+
+    public LoginForm() {
+        // Initialize the username and password fields
+        this.usernameInput = new JTextField();
+        this.passwordInput = new JPasswordField();
+    }
 
     // method to start LoginForm
     public void initialize() {
@@ -42,14 +48,11 @@ public class LoginForm extends JFrame {
 
         /************** Labels and Inputs **************************/
         // displays for the user if they are in the login form
-        JLabel loginLabel = new JLabel("Login to clock in", SwingConstants.CENTER);
-        
+        JLabel loginLabel = new JLabel("Login to Clock In", SwingConstants.CENTER);
         JLabel usernameLabel = new JLabel("Username");
-
-        JTextField usernameInput = new JTextField();
-
         JLabel passwordLabel = new JLabel("Password");
 
+        JTextField usernameInput = new JTextField();
         JPasswordField passwordInput = new JPasswordField();
 
         /******************** Form Panel (Labels and Input) ****************************/
@@ -115,6 +118,12 @@ public class LoginForm extends JFrame {
 
 
         /***************** Initialize the Frame + final frame settings ****************/
+        // Sets the layout of the frame
+        setLayout(new BorderLayout());
+        add(loginLabel, BorderLayout.NORTH);
+        add(formPanel, BorderLayout.CENTER);
+        add(buttonPanel, BorderLayout.SOUTH);
+        
         setTitle("Login Form");
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setSize(800, 600);
