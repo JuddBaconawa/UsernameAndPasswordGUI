@@ -6,14 +6,17 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+
+// MySQL connection with VS Code
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import javax.swing.BorderFactory;
 
 // To GUI formatting and visual changes
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -70,7 +73,7 @@ public class LoginForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String username = usernameInput.getText();
-                String password = String.valueOf(userPasswordInput.getPassword());
+                String password = String.valueOf(passwordInput.getPassword());
 
                 User user = getAuthenticatedUser(username, password);
                 
@@ -123,7 +126,7 @@ public class LoginForm extends JFrame {
 
 
     // User authenticator method - connects using JDBC which implements prepared SQL statements to access MySQL
-    private User getAuthenticatedUser(String usernameInpute, String passwordInput) {
+    private User getAuthenticatedUser(String usernameInput, String passwordInput) {
         
         // Sets the User empty or null to be ready for a user
         User user = null;
