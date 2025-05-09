@@ -126,8 +126,8 @@ public class LoginForm extends JFrame {
         
         setTitle("Login Form");
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        setSize(800, 600);
-        setMinimumSize(new Dimension(350, 450));
+        setSize(400, 400);
+        //setMinimumSize(new Dimension(350, 450));
         setResizable(false);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -164,6 +164,8 @@ public class LoginForm extends JFrame {
 
             if (resultSet.next()) {
 
+                    // Retrieves the user information from the database
+                    // and sets the user attributes
 					user = new User();
 					user.userId = resultSet.getInt("userId");
 					user.username = resultSet.getString("username");
