@@ -52,8 +52,8 @@ public class LoginForm extends JFrame {
         JLabel usernameLabel = new JLabel("Username");
         JLabel passwordLabel = new JLabel("Password");
 
-        JTextField usernameInput = new JTextField();
-        JPasswordField passwordInput = new JPasswordField();
+        usernameInput.setText("");
+        passwordInput.setText("");
 
         /******************** Form Panel (Labels and Input) ****************************/
         // Creates the panel, sets the grid layout, and then adds all the fields into the panel
@@ -147,7 +147,7 @@ public class LoginForm extends JFrame {
         try {
 
             // Loads MySQL using Java database connection driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            // Class.forName("com.mysql.cj.jdbc.Driver");
 
             // Connection to the database
             Connection conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
